@@ -3,7 +3,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
@@ -19,18 +18,12 @@ import javax.imageio.ImageIO;
  */
 public class MyFrame extends Frame implements Runnable {
 	BufferedImage im;
-	/**
-	 * fillRect 等で用いる描画色
-	 */
+
 	Color col=Color.BLACK;
-	/**
-	 * アニメーション用のスレッド
-	 */
+	
 	Thread t;
 	public Color bgColor=new Color(255,255,255);
-	/**
-	 * ウィンドウを作成し、表示する。
-	 */
+	
 	public MyFrame() {
 		super();
 		setSize(400,400	);
@@ -43,7 +36,7 @@ public class MyFrame extends Frame implements Runnable {
 				System.exit(1);
 			}
 		});
-		//autoSave();
+	
 	}
 	public synchronized void saveImage(File dst) throws IOException {
 		ImageIO.write(im, "png", dst);

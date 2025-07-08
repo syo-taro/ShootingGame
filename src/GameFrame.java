@@ -59,7 +59,7 @@ public class GameFrame extends MyFrame {
             e.draw(this);
             e.move();
         }
-        int i=0; // 追加ここから
+        int i=0; 
         while (i<GameWorld.enemies.size()) {
             Enemy e=GameWorld.enemies.get(i);
             if (e.isDead || e.y > 400) {
@@ -67,7 +67,7 @@ public class GameFrame extends MyFrame {
             } else {
                 i++;
             }
-        } // 追加ここまで
+        } 
     }
     public void checkPlayerBulletsAndEnemies() {
         int i=0;
@@ -85,7 +85,7 @@ public class GameFrame extends MyFrame {
                         e.isDead = true;
                         GameWorld.score += e.score;
                     }
-                    break; // 命中したらループを抜ける（多段ヒットさせたいならここは抜けない）
+                    break; 
                 }
                 j++;
             }
@@ -97,13 +97,13 @@ public class GameFrame extends MyFrame {
         }
     }
     public boolean checkHit(Character a, Character b) {
-        if (Math.abs(a.x-b.x)<=20&&Math.abs(a.y-b.y)<=20) {// ★
+        if (Math.abs(a.x-b.x)<=20&&Math.abs(a.y-b.y)<=20) {
             return true;
         } else {
             return false;
         }
     }
-    public void movePlayerBullets() { // 追加ここから
+    public void movePlayerBullets() { 
         int i=0;
         while (i<GameWorld.playerBullets.size()) {
             PlayerBullet b=GameWorld.playerBullets.get(i);
@@ -115,5 +115,5 @@ public class GameFrame extends MyFrame {
                 i++;
             }
         }
-    }// 追加ここまで
+    }
 }

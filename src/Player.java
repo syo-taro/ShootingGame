@@ -4,7 +4,7 @@ import java.awt.event.KeyListener;
 
 public class Player extends Character implements KeyListener {
     public Player(double x, double y, double vx, double vy) {
-        // Characterクラスのコンストラクタ呼び出し(8章)
+     
         super(x, y, vx, vy);
     }
     public void move() {
@@ -30,14 +30,14 @@ public class Player extends Character implements KeyListener {
             vx=5;
         }
         if (e.getKeyCode()==KeyEvent.VK_SPACE) {
-            GameWorld.playerBullets.add(new PlayerBullet(x, y, 0, -10));// 変更
-            GameWorld.playerBullets.add(new PlayerBullet(x, y, 4, -8));// 追加
-            GameWorld.playerBullets.add(new PlayerBullet(x, y, -4, -8));// 追加
+            GameWorld.playerBullets.add(new PlayerBullet(x, y, 0, -10));
+            GameWorld.playerBullets.add(new PlayerBullet(x, y, 4, -8));
+            GameWorld.playerBullets.add(new PlayerBullet(x, y, -4, -8));
             System.out.println("弾の数="+GameWorld.playerBullets.size());
         }
         if (e.getKeyCode()==KeyEvent.VK_ENTER) {
             System.out.println("Enterキーが押されました");
-            GameWorld.enterPressed=true;// 追加
+            GameWorld.enterPressed=true;
         }
     }
     public void keyReleased(KeyEvent e) {
